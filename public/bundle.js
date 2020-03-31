@@ -8198,6 +8198,7 @@ let client = {}
 
 console.log('yes')
 function PeerName(isHost){
+    console.log(isHost)
     if(isHost){
         document.getElementById('infoLabel').innerHTML = 'Host';
     }
