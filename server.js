@@ -8,6 +8,13 @@ app.use(express.static(__dirname + "/public"))
 let clients = 0
 
 io.on('connection', function (socket) {
+    console.log(clients)
+    if (clients == 0) {
+        this.emit('PeerName', true)
+    }
+    else{
+        this.emit('PeerName', false)
+    }
     socket.on("NewClient", function () {
         if (clients < 2) {
             if (clients == 1) {
@@ -23,12 +30,14 @@ io.on('connection', function (socket) {
     socket.on('Offer', SendOffer)
     socket.on('Answer', SendAnswer)
     socket.on('disconnect', Disconnect)
+    socket.on('ConnectedDevice', ConnectedDevice)
 })
 
 function Disconnect() {
     if (clients > 0) {
-        if (clients <= 2)
+        if (clients <= 2){
             this.broadcast.emit("Disconnect")
+        }
         clients--
     }
 }
@@ -39,6 +48,10 @@ function SendOffer(offer) {
 
 function SendAnswer(data) {
     this.broadcast.emit("BackAnswer", data)
+}
+
+function ConnectedDevice() {
+    this.broadcast.emit("ConnectedDevice")
 }
 
 http.listen(port, () => console.log(`Active on ${port} port`))

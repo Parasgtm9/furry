@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <h1 id='infoLabel' center hidden>Male</h1>
+    <div class="container-fluid">        
         <div class="row h-100 w-100">
             <div class="col-12 col-sm-6 d-flex justify-content-center">
                 <div class="embed-responsive embed-responsive-16by9">
@@ -16,6 +17,31 @@
             </div>
 
             <div class="col-12 col-sm-6 d-flex justify-content-center">
+                <div id='infoLabel1' hidden>
+                    <style>
+                        .loader {
+                          border: 16px solid #f3f3f3;
+                          border-radius: 50%;
+                          border-top: 16px solid #3498db;
+                          width: 120px;
+                          height: 120px;
+                          -webkit-animation: spin 2s linear infinite; /* Safari */
+                          animation: spin 2s linear infinite;
+                        }
+                        
+                        /* Safari */
+                        @-webkit-keyframes spin {
+                          0% { -webkit-transform: rotate(0deg); }
+                          100% { -webkit-transform: rotate(360deg); }
+                        }
+                        
+                        @keyframes spin {
+                          0% { transform: rotate(0deg); }
+                          100% { transform: rotate(360deg); }
+                        }
+                    </style>
+                    <div class="loader"></div>
+                </div>
                 <div id="peerDiv"  class="embed-responsive embed-responsive-16by9">
                 </div>
             </div>
