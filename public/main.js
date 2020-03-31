@@ -3,10 +3,12 @@ let socket = io()
 var video = document.querySelector('video')
 let client = {}
 
+console.log('ehyeyyeyeyey')
 // get stream
 navigator.mediaDevices.getUserMedia({video: true, audio: true})
 .then(stream => {
-    socket.emit('New client')
+    console.log('herere')
+    socket.emit('NewClient')
     video.srcObject = stream
     video.play()
 
