@@ -16,8 +16,8 @@ io.on('connection', function (socket) {
         this.emit('PeerName', false)
     }
     socket.on("NewClient", function () {
-        if (clients < 2) {
-            if (clients == 1) {
+        if (clients < 3) {
+            if (clients == 1 || clients == 2) {
                 this.emit('CreatePeer')
             }
         }
