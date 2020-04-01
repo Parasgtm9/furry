@@ -20,7 +20,17 @@ connection.onstream = function(event) {
     document.body.appendChild( event.mediaElement );
 };
 
-var predefinedRoomId = prompt('Please enter room-id', 'xyzxyzxyz');
+var predefinedRoomId = '8591591041';
 
-connection.openOrJoin(predefinedRoomId);
+setTimeout(function(){
+    document.getElementById('btn-open-room').onclick = function() {
+        this.disabled = true;
+        connection.open( predefinedRoomId );
+    };
+
+    document.getElementById('btn-join-room').onclick = function() {
+        this.disabled = true;
+        connection.join( predefinedRoomId );
+    };
+},2000);
 },{}]},{},[1]);
