@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoChat</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <style>
+    <!-- <style>
         video {max-width:20%;}
-    </style>
+    </style> -->
 </head>
 <body>
     <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="bundle.js"></script>
+    <link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+    <script src="dev/getHTMLMediaElement.js"></script>
     <h1>hahahah</h1>
 
     <button id="btn-open-room">Open Room</button>
     <button id="btn-join-room">Join Room</button><hr>
+
+    <section class="make-center">
+        <div id="videos-container" style="margin: 20px 0;"></div>
+        <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+    </section>
 </body>
 </html>
